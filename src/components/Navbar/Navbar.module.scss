@@ -1,0 +1,22 @@
+.container {
+  background: linear-gradient(90deg, (#3876be) 20%, (#9331eb));
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1em 4em;
+  nav {
+    li {
+      font-weight: 500;
+      color: white;
+      list-style: none;
+      margin-right: 1em;
+      display: inline-block;
+      text-decoration: none;
+      transition: 1s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

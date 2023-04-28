@@ -4,6 +4,7 @@ import './styles/estilosGlobais.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BasePage from './pages/BasePage';
+import FavoritePage from './pages/FavoritePage';
 
 
 
@@ -13,6 +14,7 @@ function AppRoutes() {
       <Routes>
         <Route path='/' element={<BasePage />}>
           <Route index element={<HomePage />}></Route>
+          <Route path='favoritos' element={<FavoritePage />}></Route>
 
         </Route>
       </Routes>
