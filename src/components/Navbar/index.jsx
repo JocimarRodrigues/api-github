@@ -6,15 +6,12 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className={styles.container}>
-      <span>
-        <b>GitHub</b> Search
-      </span>
       <nav>
         <Link to={"/"}>
           <li>Inicio</li>
         </Link>
         <Link to={"favoritos"}>
-          <li>favoritos</li>
+          <li>Favoritos</li>
         </Link>
       </nav>
     </header>
