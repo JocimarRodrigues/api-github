@@ -1,0 +1,17 @@
+.container {
+  margin-top: 2rem;
+
+  .users {
+    display: flex;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
+    border-radius: 15px;
+    margin: 20px;
+    h1 {
+      margin: 20px;
+    }
+    img {
+      margin: 20px;
+      border-radius: 15px;
+    }
+  }
+}
