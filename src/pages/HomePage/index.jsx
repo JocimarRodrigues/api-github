@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       <img src={logo} alt="Logo Github" />
-      <Form selectedButton={selectedButton}/>
+      <Form selectedButton={selectedButton} />
       <div className={styles.buttons}>
         <button
           className={selectedButton === "user" ? styles.selectedButton : ""}

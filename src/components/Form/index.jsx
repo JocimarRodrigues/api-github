@@ -25,8 +25,23 @@ const Form = ({ selectedButton }) => {
             const response = await apiService.userData(searchValue)
             if (response.items.length > 0) {
                 setUserName(searchValue);
-                navigate("./usersPage")
+                navigate("users")
+            } else {
+                alert("Não Existe")
             }
+        } catch (error) {
+            
+        }
+    } else if (selectedButton === "repository") {
+        try {
+            const response = await apiService.repoData(searchValue);
+            if (response.items.length > 0) {
+                setRepoName(searchValue);
+                navigate("repositories")
+            } else {
+                alert("Não existe")
+            }
+            
         } catch (error) {
             
         }

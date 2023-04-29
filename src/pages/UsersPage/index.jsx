@@ -10,7 +10,7 @@ const UsersPage = () => {
       {users.map((user) => {
         return (
           <div className={styles.users} key={user.id} id={user.id}>
-            <img src={user.avatar} alt="User-Avatar" />
+            <img src={user.avatar} alt="Avatar do Usuário" />
             <h1>{user.userName}</h1>
           </div>
         );
