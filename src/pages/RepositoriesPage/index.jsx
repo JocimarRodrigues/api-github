@@ -5,7 +5,7 @@ import { useSearchContext } from "../../components/common/context/searchContext"
 import { useFavoritesContext } from "../../components/common/context/favoritesContext";
 
 const RepositoriesPage = () => {
-  const { repositories } = useSearchContext();
+  const { repositories, showMoreResults } = useSearchContext();
 
   const {addRepo, star} = useFavoritesContext();
 
@@ -36,6 +36,7 @@ const RepositoriesPage = () => {
           </div>
         );
       })}
+      <button onClick={showMoreResults}>Mostrar mais</button>
     </div>
   );
 };

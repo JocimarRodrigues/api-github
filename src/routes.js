@@ -9,6 +9,7 @@ import { SearchProvider } from "./components/common/context/searchContext";
 import UsersPage from "./pages/UsersPage";
 import RepositoriesPage from "./pages/RepositoriesPage";
 import { FavoritesProvider } from "./components/common/context/favoritesContext";
+import ProfilePage from "./pages/ProfilePage";
 
 function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ function AppRoutes() {
               <Route index element={<HomePage />}></Route>
               <Route path="favoritos" element={<FavoritePage />}></Route>
               <Route path="users" element={<UsersPage />}></Route>
+              <Route path="userProfile" element={<ProfilePage />}></Route>
               <Route path="repositories" element={<RepositoriesPage />}></Route>
             </Route>
           </Routes>

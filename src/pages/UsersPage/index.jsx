@@ -3,13 +3,13 @@ import styles from "./UsersPage.module.scss";
 import { useSearchContext } from "../../components/common/context/searchContext";
 
 const UsersPage = () => {
-  const { users, showMoreResults } = useSearchContext();
+  const { users, showMoreResults, searchUser } = useSearchContext();
 
   return (
     <div className={styles.container}>
       {users.map((user) => {
         return (
-          <div className={styles.users} key={user.id} id={user.id}>
+          <div className={styles.users} key={user.id} id={user.id} onClick={() => searchUser(user.userName)}>
             <img src={user.avatar} alt="Avatar do Usuário" />
             <h1>{user.userName}</h1>
           </div>

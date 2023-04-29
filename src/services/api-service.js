@@ -44,9 +44,25 @@ export const showUserProfile = async (user) => {
   }
 }
 
+export const showUserRepos = async (user) => {
+  try {
+    const response = await fetch(`https://api.github.com/users/${user}/repos?direction=desc`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const data = await response.json();
+    return data
+  } catch (error) {
+    console.log(error)
+    throw new Error("Aconteceu um arro ao obters os dados do repositório do usuário")
+  }
+}
+
 
 
 export const apiService = {
   userData,
   repoData,
+  showUserProfile,
+  showUserRepos
 };
