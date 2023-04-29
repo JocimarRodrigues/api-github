@@ -10,7 +10,7 @@ export const userData = async (username) => {
     return data;
   } catch (error) {
     console.error(error);
-    throw new Error("Erro ao obter dados do usuário");
+    throw new Error("Erro ao obter dados dos usuários");
   }
 };
 
@@ -24,11 +24,27 @@ export const repoData = async (reponame) => {
     }
     const data = await response.json();
     return data;
-  } catch (erro) {
-    console.log(erro);
+  } catch (error) {
+    console.log(error);
     throw new Error("Aconteceu um erro ao obter os dados dos repositórios");
   }
 };
+
+export const showUserProfile = async (user) => {
+  try {
+    const response = await fetch(`https://api.github.com/users/${user}`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error)
+    throw new Error("Aconteceu um erro ao obter os dados do usuário")
+  }
+}
+
+
 
 export const apiService = {
   userData,

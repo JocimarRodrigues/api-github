@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap');
 
+
 body {
     margin: 0;
     padding: 0;
@@ -21,3 +22,30 @@ body {
   // Fontes
 
   $fonte: 'Roboto', 'sans-serif';  
+
+
+  @mixin button-style {
+    color: white;
+    background-color: #3876be;
+    border: none;
+    border-radius: 50px;
+    width: 10em;
+    height: 3em;
+    margin: 0 2px;
+    font-family: $fonte;
+  }
+
+  @mixin button-more {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: black;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }

@@ -4,10 +4,11 @@ import styles from "./FavoritesPage.module.scss";
 
 const FavoritePage = () => {
   const { favorites, star, addRepo } = useFavoritesContext();
+  console.log(favorites)
 
   return (
     <div className={styles.container}>
-      {favorites ? (
+      {favorites.length > 0 ? (
         favorites.map((item) => {
           return (
             <div id={item.name} key={item.name} className={styles.repositories}>
@@ -22,7 +23,7 @@ const FavoritePage = () => {
           );
         })
       ) : (
-        <div>Não existe Favoritos</div>
+        <div><h1>Não existem favoritos</h1></div>
       )}
     </div>
   );

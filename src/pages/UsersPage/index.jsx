@@ -3,7 +3,7 @@ import styles from "./UsersPage.module.scss";
 import { useSearchContext } from "../../components/common/context/searchContext";
 
 const UsersPage = () => {
-  const { users } = useSearchContext();
+  const { users, showMoreResults } = useSearchContext();
 
   return (
     <div className={styles.container}>
@@ -15,6 +15,7 @@ const UsersPage = () => {
           </div>
         );
       })}
+      <button onClick={showMoreResults}>Mostrar Mais</button>
     </div>
   );
 };

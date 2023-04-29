@@ -58,8 +58,14 @@ export const useSearchContext = () => {
     }
   }, [repoName, resultCount]);
 
+  const showMoreResults = () => {
+    setResultCount((prev) => prev + 4)
+  }
+
   return {
     users,
-    repositories
+    repositories,
+    showMoreResults
+ 
   };
 };

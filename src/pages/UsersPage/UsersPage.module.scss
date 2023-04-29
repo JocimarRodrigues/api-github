@@ -1,6 +1,7 @@
+@import "/src/styles/estilosGlobais.scss";
+
 .container {
   margin-top: 2rem;
-
   .users {
     display: flex;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
@@ -13,5 +14,10 @@
       margin: 20px;
       border-radius: 15px;
     }
+  }
+
+  button {
+    @include button-style;
+    @include button-more;
   }
 }

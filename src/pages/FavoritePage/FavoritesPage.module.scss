@@ -1,28 +1,8 @@
+@import '/src/styles/cardStyles.scss';
+
 .container {
     margin-top: 2rem;
     .repositories {
-        display: block;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
-        border-radius: 15px;
-        margin: 20px;
-        padding: 20px;
-        position: relative;
-        img {
-            margin-left: auto;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 50px;
-        }
-        h2 {
-            opacity: 0.5;
-        }
-        .favorites {
-            display: flex;
-            align-items: center;
-            p {
-                padding-left: 5px;
-            }
-        }
+        @include card-style;
     }
 }

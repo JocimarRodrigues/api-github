@@ -14,14 +14,7 @@
   }
   .buttons {
     button {
-      color: white;
-      background-color: #3876be;
-      border: none;
-      border-radius: 50px;
-      width: 10em;
-      height: 3em;
-      margin: 0 2px;
-      font-family: $fonte;
+      @include button-style;
     }
     .selectedButton {
       background-color: #7a33ff;
