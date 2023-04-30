@@ -48,6 +48,7 @@ export const useSearchContext = () => {
 
   const [repositories, setRepositories] = useState([]);
   const [resultCount, setResultCount] = useState(4);
+  const [resultReposProfile, setResultReposProfile] = useState(4);
 
   const navigate = useNavigate();
 
@@ -100,7 +101,7 @@ export const useSearchContext = () => {
     };
 
     const userRepositoriesData = userRepoData
-      .slice(0, 4)
+      .slice(0, resultReposProfile)
       .map((item) => ({
         id: item.id,
         name: item.name,
@@ -117,12 +118,18 @@ export const useSearchContext = () => {
     setResultCount((prev) => prev + 4);
   };
 
+  const showMoreResultsProfile = () => {
+    console.log(resultReposProfile)
+    setResultReposProfile((prev) => prev + 4)
+  }
+
   return {
     users,
     userProfile,
     userRepositories,
     repositories,
     showMoreResults,
+    showMoreResultsProfile,
     searchUser,
   };
 };

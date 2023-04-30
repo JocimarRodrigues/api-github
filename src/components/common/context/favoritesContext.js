@@ -16,7 +16,7 @@ export const FavoritesProvider = ({ children }) => {
 export const useFavoritesContext = () => {
   const { favorites, setFavorites } = useContext(FavoritesContext);
   const [ star, setStar ] = useState({});
-  console.log(star)
+
 
   const addRepo = (name, description) => {
     const newRepo = {

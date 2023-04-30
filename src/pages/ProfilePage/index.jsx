@@ -12,6 +12,7 @@ import { useFavoritesContext } from "../../components/common/context/favoritesCo
 const ProfilePage = () => {
   const { userProfile, userRepositories } = useContext(SearchContext);
   const { star, addRepo } = useFavoritesContext();
+  const {showMoreResultsProfile} = useSearchContext();
   return (
     <div className={styles.container}>
       <div className={styles.card_user}>
@@ -19,14 +20,17 @@ const ProfilePage = () => {
         <div className={styles.content}>
           <h1>{userProfile.name}</h1>
           <h2>{userProfile.subName}</h2>
-          <div className={styles.bar_colored}>
-            
-          </div>
+          <div className={styles.bar_colored}></div>
+
 
           <div className={styles.followers}>
             <FaUsers size={20} />
-            <h3>Seguindo: {userProfile.following}</h3>
-            <h3>Seguidores: {userProfile.followers}</h3>
+            <h3>
+              Seguindo: {userProfile.following}
+            </h3>
+            <h3>
+              Seguidores: {userProfile.followers}
+            </h3>
           </div>
           <h4>
             <AiOutlineHome size={20} />
@@ -34,6 +38,7 @@ const ProfilePage = () => {
           </h4>
         </div>
       </div>
+
       <div className={styles.cards}>
         {userRepositories.map((item) => {
           return (
@@ -48,6 +53,7 @@ const ProfilePage = () => {
             </div>
           );
         })}
+      <button onClick={showMoreResultsProfile}>Buscar Mais</button>
       </div>
     </div>
   );
