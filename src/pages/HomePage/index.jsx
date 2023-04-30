@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "./gitHubLogo.png";
 import styles from "./HomePage.module.scss";
 import Form from "../../components/Form";
+import Modal from "../../components/Modal";
 
 const HomePage = () => {
   const [selectedButton, setSelectedButton] = useState("user");
@@ -9,6 +10,8 @@ const HomePage = () => {
   const onSelectedButton = (btn) => {
     setSelectedButton(btn);
   };
+
+  const [showModal, setShowMudal] = useState(true)
 
   return (
     <div className={styles.container}>
@@ -30,6 +33,7 @@ const HomePage = () => {
           Repositorio
         </button>
       </div>
+      <Modal showModal={showModal}/>
     </div>
   );
 };

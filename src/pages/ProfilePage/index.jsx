@@ -10,31 +10,31 @@ import {
 import { useFavoritesContext } from "../../components/common/context/favoritesContext";
 
 const ProfilePage = () => {
-  const { userProfile, userRepositories } = useContext(SearchContext);
+  //const { userProfile } = useContext(SearchContext);
   const { star, addRepo } = useFavoritesContext();
-  const {showMoreResultsProfile} = useSearchContext();
+  const {showMoreResults, userProfileData, userRepositories, showMoreResultsProfile} = useSearchContext();
   return (
     <div className={styles.container}>
       <div className={styles.card_user}>
-        <img src={userProfile.avatar} alt="User-Avatar" />
+        <img src={userProfileData.avatar} alt="User-Avatar" />
         <div className={styles.content}>
-          <h1>{userProfile.name}</h1>
-          <h2>{userProfile.subName}</h2>
+          <h1>{userProfileData.name}</h1>
+          <h2>{userProfileData.subName}</h2>
           <div className={styles.bar_colored}></div>
 
 
           <div className={styles.followers}>
             <FaUsers size={20} />
             <h3>
-              Seguindo: {userProfile.following}
+              Seguindo: {userProfileData.following}
             </h3>
             <h3>
-              Seguidores: {userProfile.followers}
+              Seguidores: {userProfileData.followers}
             </h3>
           </div>
           <h4>
             <AiOutlineHome size={20} />
-            <p>{userProfile.location}</p>
+            <p>{userProfileData.location}</p>
           </h4>
         </div>
       </div>

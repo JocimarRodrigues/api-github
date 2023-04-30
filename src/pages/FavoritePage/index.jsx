@@ -4,7 +4,7 @@ import styles from "./FavoritesPage.module.scss";
 
 const FavoritePage = () => {
   const { favorites, star, addRepo } = useFavoritesContext();
-  console.log(favorites)
+  console.log(star)
 
   return (
     <div className={styles.container}>
