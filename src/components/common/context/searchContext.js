@@ -1,8 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   apiService,
+  getUserProfile,
+  getUserRepos,
   repoData,
-  showUserProfile,
   userData,
 } from "../../../services/api-service";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ export const SearchProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [repoName, setRepoName] = useState("");
   const [userProfile, setUserProfile] = useState([]);
+  const [userRepositories, setUserRepositories] = useState([]);
 
   return (
     <SearchContext.Provider
@@ -24,6 +26,8 @@ export const SearchProvider = ({ children }) => {
         setRepoName,
         userProfile,
         setUserProfile,
+        userRepositories,
+        setUserRepositories,
       }}
     >
       {children}
@@ -32,8 +36,14 @@ export const SearchProvider = ({ children }) => {
 };
 
 export const useSearchContext = () => {
-  const { userName, repoName, userProfile, setUserProfile } =
-    useContext(SearchContext);
+  const {
+    userName,
+    repoName,
+    userProfile,
+    setUserProfile,
+    userRepositories,
+    setUserRepositories,
+  } = useContext(SearchContext);
   const [users, setUsers] = useState([]);
 
   const [repositories, setRepositories] = useState([]);
@@ -77,23 +87,29 @@ export const useSearchContext = () => {
   }, [repoName, resultCount]);
 
   const searchUser = async (user) => {
-    const userProfileData = await showUserProfile(user);
-    const userRepoData  = await apiService.showUserRepos(user)
+    const userProfileData = await getUserProfile(user);
+    const userRepoData = await getUserRepos(user);
+    console.log(userRepoData);
     const userData = {
       name: userProfileData.name,
+      subName: userProfileData.login,
       avatar: userProfileData.avatar_url,
       following: userProfileData.following,
       location: userProfileData.location,
       followers: userProfileData.followers,
     };
-    const userRepositories = {
-     
 
-    }
-    
+    const userRepositoriesData = userRepoData
+      .slice(0, 4)
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        description: item.description,
+      }));
+
     setUserProfile(userData);
+    setUserRepositories(userRepositoriesData);
 
-    console.log(userProfile);
     navigate("/userProfile");
   };
 
@@ -104,6 +120,7 @@ export const useSearchContext = () => {
   return {
     users,
     userProfile,
+    userRepositories,
     repositories,
     showMoreResults,
     searchUser,

@@ -30,7 +30,7 @@ export const repoData = async (reponame) => {
   }
 };
 
-export const showUserProfile = async (user) => {
+export const getUserProfile = async (user) => {
   try {
     const response = await fetch(`https://api.github.com/users/${user}`)
     if (!response.ok) {
@@ -44,7 +44,7 @@ export const showUserProfile = async (user) => {
   }
 }
 
-export const showUserRepos = async (user) => {
+export const getUserRepos = async (user) => {
   try {
     const response = await fetch(`https://api.github.com/users/${user}/repos?direction=desc`)
     if (!response.ok) {
@@ -63,6 +63,6 @@ export const showUserRepos = async (user) => {
 export const apiService = {
   userData,
   repoData,
-  showUserProfile,
-  showUserRepos
+  getUserProfile,
+  getUserRepos
 };
