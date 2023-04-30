@@ -44,7 +44,7 @@ const ProfilePage = () => {
           return (
             <div className={styles.card_repository}>
               <h1>{item.name}</h1>
-              <h2>{item.id}</h2>
+              <h2>{item.description}</h2>
               <img
                 src={star[item.name] ? "/star-colored.png" : "/star.png"}
                 alt="Star-Image"

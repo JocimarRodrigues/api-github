@@ -10,6 +10,7 @@ import UsersPage from "./pages/UsersPage";
 import RepositoriesPage from "./pages/RepositoriesPage";
 import { FavoritesProvider } from "./components/common/context/favoritesContext";
 import ProfilePage from "./pages/ProfilePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
               <Route path="users" element={<UsersPage />}></Route>
               <Route path="userProfile" element={<ProfilePage />}></Route>
               <Route path="repositories" element={<RepositoriesPage />}></Route>
+              <Route path="*" element={<NotFoundPage />}></Route>
             </Route>
           </Routes>
         </FavoritesProvider>

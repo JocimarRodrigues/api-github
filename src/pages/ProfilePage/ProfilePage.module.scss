@@ -12,10 +12,10 @@
     height: 600px;
 
     img {
-      padding: 25px;
-      display: flex;
-      align-items: center;
-      margin: auto;
+      //padding: 25px;
+      //display: flex;
+      //align-items: center;
+      //margin: auto;
       border-radius: 45px;
     }
     .content {
@@ -85,6 +85,147 @@
     button {
       @include button-style;
       @include button-more;
+    }
+  }
+}
+
+@media (min-width: 360px) {
+  .container {
+    margin: 30px;
+    display: block;
+    .card_user {
+      width: 90%;
+      height: 500px;
+
+      img {
+        margin: 15px 45px 0 45px;
+      }
+
+      .content {
+
+        .bar_colored {
+          width: 190px;
+        }
+
+        .followers {
+          h3 {
+            margin-left: 10px;
+          }
+        }
+        h4 {
+          p {
+            max-width: 170px;
+            margin-left: 10px;
+          }
+        }
+      }
+      }
+
+
+
+    .cards {
+
+
+      .card_repository {
+        width: 90%;
+        margin: 0;
+        margin-top: 50px;
+
+        h1 {
+          font-size: 13pt;
+          
+        }
+
+        h2 {
+          font-size: 11pt;
+        }
+      }
+    }
+
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    display: flex;
+
+    .card_user {
+
+      img {
+        display: block;
+        text-align: center;
+        margin: 0;
+        margin-left: 35px;
+        padding: 15px;
+      }
+      
+      margin: 0;
+
+      width: 50%;
+      .content {
+
+        h1 {
+          font-size: 14pt;
+        }
+        h2 {
+          margin-right: 80px;
+        }
+        .bar_colored {
+          width: 13rem;
+        }
+      }
+    }
+
+    .cards {
+
+      .card_repository {
+        margin: 0 0 15px 15px;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    .card_user {
+      width: 35%;
+    }
+    .cards {
+
+      .card_repository {
+        width: 55vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    .card_user {
+    
+      img {
+        margin-left: 27px;
+      }
+    }
+    .cards {
+      .card_repository {
+        width: 70vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    .card_user {
+      width: 15%;
+    }
+
+    .cards {
+      .card_repository {
+        width: 80vw;
+      }
     }
   }
 }
