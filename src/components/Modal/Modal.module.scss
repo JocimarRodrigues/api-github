@@ -1,3 +1,5 @@
+@import '/src/styles/estilosGlobais.scss';
+
 .overlay {
     position: fixed;
     top: 0;
@@ -10,8 +12,23 @@
     align-items: center;
     color: white;
     z-index: 2;
+    text-align: center;
     .content {
-        background-color: white;
-        color: black;
+        img {
+            width: 120px;
+        }
+        //font-family: $fonte;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #282c34;
+        max-width: 20vw;
+        color: white;
+        button {
+            @include button-style;
+            background-color: red;
+            &:hover {
+                background-color: black;
+            }
+        }
     }
 }

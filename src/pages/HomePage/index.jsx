@@ -33,9 +33,11 @@ const HomePage = () => {
           Repositorio
         </button>
       </div>
-      <Modal showModal={showModal}/>
+   
     </div>
   );
 };
 
 export default HomePage;
+
+   //<Modal showModal={showModal}/>
