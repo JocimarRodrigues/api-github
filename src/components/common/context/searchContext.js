@@ -1,10 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
-  apiService,
-  getUserProfile,
-  getUserRepos,
-  repoData,
-  userData,
+  apiService
 } from "../../../services/api-service";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +43,7 @@ export const useSearchContext = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await userData(userName);
+      const data = await apiService.userData(userName);
       const usersData = data.items.slice(0, resultCount).map((item) => ({
         userName: item.login,
         avatar: item.avatar_url,
@@ -64,7 +60,7 @@ export const useSearchContext = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await repoData(repoName);
+      const data = await apiService.repoData(repoName);
       const reposData = data.items.slice(0, resultCount).map((item) => ({
         nameRepo: item.full_name,
         description: item.description,
@@ -82,7 +78,7 @@ export const useSearchContext = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const userProfileData = await getUserProfile(userProfileName);
+      const userProfileData = await apiService.getUserProfile(userProfileName);
 
       const userData = {
         name: userProfileData.name,
@@ -102,7 +98,7 @@ export const useSearchContext = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const userRepoData = await getUserRepos(userProfileName);
+      const userRepoData = await apiService.getUserRepos(userProfileName);
       const userRepositoriesData = userRepoData
         .slice(0, resultReposProfile)
         .map((item) => ({

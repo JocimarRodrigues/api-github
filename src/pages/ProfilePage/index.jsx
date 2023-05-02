@@ -48,7 +48,7 @@ const ProfilePage = () => {
               <img
                 src={star[item.name] ? "/star-colored.png" : "/star.png"}
                 alt="Star-Image"
-                onClick={() => addRepo(item.name, item.id)}
+                onClick={() => addRepo(item.name, item.description)}
               />
             </div>
           );
