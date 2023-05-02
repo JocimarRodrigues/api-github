@@ -1,3 +1,5 @@
+@import '/src/styles/variables';
+
 .container {
     display: flex;
     margin: 30px;
@@ -5,12 +7,12 @@
   
     input {
       height: 40px;
-      width: 500px;
+      width: 70vw;
       border: none;
       border-radius: 30px;
-      padding-left: 15px;
-      font-size: 15pt;
-      text-align: center;
+      padding-left: 30px;
+      font-size: $title-size;
+      text-align: left;
     }
     button {
 
@@ -23,6 +25,9 @@
       right: 0;
       height: 100%;
       width: 50px;
+      &:hover {
+        background: black;
+      }
     }
     .link {
       button {
@@ -36,3 +41,36 @@
     width: 200px;
   }
   
+@media (min-width: 700px) {
+  .container {
+    input {
+      width: 60vw;
+    }
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .container {
+    input {
+      width: 50vw;
+    }
+}
+
+@media(min-width: 1440px) {
+ .container {
+  input {
+    width: 35vw;
+  }
+ }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    input {
+      width: 30vw;
+    }
+  }
+}
+
+}

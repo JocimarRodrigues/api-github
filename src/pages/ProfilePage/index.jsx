@@ -16,8 +16,8 @@ const ProfilePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card_user}>
-        <img src={userProfileData.avatar} alt="User-Avatar" />
         <div className={styles.content}>
+        <img src={userProfileData.avatar} alt="User-Avatar" />
           <h1>{userProfileData.name}</h1>
           <h2>{userProfileData.subName}</h2>
           <div className={styles.bar_colored}></div>

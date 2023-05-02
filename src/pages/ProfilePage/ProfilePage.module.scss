@@ -2,38 +2,34 @@
 @import "/src/styles/estilosGlobais.scss";
 @import "/src/styles/variables";
 .container {
-
-
   .card_user {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
     padding: 20px;
     border-radius: 15px;
+    height: 500px;
 
-    img {
-      //padding: 25px;
-      //display: flex;
-      //align-items: center;
-      //margin: auto;
-      border-radius: 45px;
-    }
     .content {
-      //margin-left: 2.5rem;
-      font-size: 12pt;
+      img {
+        border-radius: 45px;
+        margin-bottom: 15px;
+      }
 
       h1 {
-        //font-size: 16pt;
-        //margin: 0;
+        margin: 0;
+        font-size: $title-size;
       }
+
       h2 {
         margin: 0 0 5px;
-        // font-size: 13pt;
         color: #3876be;
+        font-size: $title-size / 1.2;
       }
+
       .bar_colored {
         height: 8px;
         background: linear-gradient(90deg, (#3876be) 20%, (#9331eb));
         border-radius: 15px;
-        //width: 265px;
+        width: 265px;
       }
 
       .followers {
@@ -42,9 +38,8 @@
         align-items: center;
 
         h3 {
-          max-width: 180px;
-          //margin-left: 12px;
-         // font-size: 9pt;
+          margin-left: 10px;
+          font-size: $title-size / 1.5;
         }
 
         :nth-child(3) {
@@ -75,14 +70,19 @@
   .cards {
     .card_repository {
       @include card-style;
-      //width: 60vw;
       text-align: center;
 
-      //margin: 0 15px 25px;
+      h1 {
+        font-size: $title-size / 1.2;
+      }
+      h2 {
+        font-size: $text-size * 1.2;
+      }
     }
     button {
       @include button-style;
       @include button-more;
+      margin-top: 30px;
     }
   }
 }
@@ -93,39 +93,11 @@
     display: block;
     .card_user {
       width: 90%;
-      height: 500px;
-
 
       img {
-        margin: 15px 35px 0 35px;
-      }
-
-      .content {
-        .bar_colored {
-          width: 265px;
-        }
-
-        
-      h1 {
-        margin: 0;
-        font-size: $title-size;
-      }
-
-      h2 {
-        font-size: $title-size / 1.2;
-      }
-        .followers {
-          h3 {
-            margin-left: 10px;
-            font-size: $title-size / 1.5;
-          }
-        }
-        h4 {
-          p {
-            //max-width: 170px;
-            //margin-left: 10px;
-          }
-        }
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
       }
     }
 
@@ -134,34 +106,19 @@
         width: 90%;
         margin: 0;
         margin-top: 50px;
-
-        h1 {
-          font-size: $title-size / 1.2;
-        }
-
-        h2 {
-          font-size: $text-size * 1.2;
-        }
-      }
-      button {
-        margin-top: 30px;
       }
     }
   }
 }
 
 @media (min-width: 414px) {
-.container {
-  .card_user {
-    img {
-      margin-left: 55px;
+  .container {
+    .card_user {
+      .content {
+        margin-left: 25px;
+      }
     }
-    .content {
-      margin-left: 25px;
-    }
-    
   }
-}
 }
 
 @media (min-width: 700px) {
@@ -169,28 +126,7 @@
     display: flex;
 
     .card_user {
-      img {
-        display: block;
-        text-align: center;
-        margin: 0;
-        margin-left: 35px;
-        padding: 15px;
-      }
-
-      margin: 0;
-
       width: 50%;
-      .content {
-        h1 {
-          font-size: 14pt;
-        }
-        h2 {
-          margin-right: 80px;
-        }
-        .bar_colored {
-          width: 235px;
-        }
-      }
     }
 
     .cards {
@@ -216,14 +152,9 @@
 
 @media (min-width: 1440px) {
   .container {
-    .card_user {
-      img {
-        margin-left: 27px;
-      }
-    }
     .cards {
       .card_repository {
-        width: 70vw;
+        width: 68vw;
       }
     }
   }
@@ -232,7 +163,7 @@
 @media (min-width: 1920px) {
   .container {
     .card_user {
-      width: 15%;
+      width: 17%;
     }
 
     .cards {

@@ -23,7 +23,7 @@ const FavoritePage = () => {
           );
         })
       ) : (
-        <div><h1>Não existem favoritos</h1></div>
+        <div className={styles.notFound}><h1>Desculpe, parece que você ainda não adicionou nenhum item aos seus favoritos.</h1></div>
       )}
     </div>
   );
