@@ -1,15 +1,13 @@
 @import "/src/styles/cardStyles.scss";
 @import "/src/styles/estilosGlobais.scss";
+@import "/src/styles/variables";
 .container {
-  display: flex;
-  margin: 30px;
+
 
   .card_user {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
     padding: 20px;
     border-radius: 15px;
-    width: 30rem;
-    height: 600px;
 
     img {
       //padding: 25px;
@@ -19,23 +17,23 @@
       border-radius: 45px;
     }
     .content {
-      margin-left: 2.5rem;
+      //margin-left: 2.5rem;
       font-size: 12pt;
 
       h1 {
-        font-size: 16pt;
-        margin: 0;
+        //font-size: 16pt;
+        //margin: 0;
       }
       h2 {
         margin: 0 0 5px;
-        font-size: 13pt;
+        // font-size: 13pt;
         color: #3876be;
       }
       .bar_colored {
         height: 8px;
         background: linear-gradient(90deg, (#3876be) 20%, (#9331eb));
         border-radius: 15px;
-        width: 265px;
+        //width: 265px;
       }
 
       .followers {
@@ -45,8 +43,8 @@
 
         h3 {
           max-width: 180px;
-          margin-left: 12px;
-          font-size: 9pt;
+          //margin-left: 12px;
+         // font-size: 9pt;
         }
 
         :nth-child(3) {
@@ -61,8 +59,8 @@
 
         p {
           max-width: 180px;
-          font-size: 9pt;
-          margin-left: 15px;
+          font-size: $title-size / 1.5;
+          margin-left: 10px;
         }
 
         img {
@@ -77,10 +75,10 @@
   .cards {
     .card_repository {
       @include card-style;
-      width: 60vw;
+      //width: 60vw;
       text-align: center;
 
-      margin: 0 15px 25px;
+      //margin: 0 15px 25px;
     }
     button {
       @include button-style;
@@ -97,60 +95,80 @@
       width: 90%;
       height: 500px;
 
+
       img {
-        margin: 15px 45px 0 45px;
+        margin: 15px 35px 0 35px;
       }
 
       .content {
-
         .bar_colored {
-          width: 190px;
+          width: 265px;
         }
 
+        
+      h1 {
+        margin: 0;
+        font-size: $title-size;
+      }
+
+      h2 {
+        font-size: $title-size / 1.2;
+      }
         .followers {
           h3 {
             margin-left: 10px;
+            font-size: $title-size / 1.5;
           }
         }
         h4 {
           p {
-            max-width: 170px;
-            margin-left: 10px;
+            //max-width: 170px;
+            //margin-left: 10px;
           }
         }
       }
-      }
-
-
+    }
 
     .cards {
-
-
       .card_repository {
         width: 90%;
         margin: 0;
         margin-top: 50px;
 
         h1 {
-          font-size: 13pt;
-          
+          font-size: $title-size / 1.2;
         }
 
         h2 {
-          font-size: 11pt;
+          font-size: $text-size * 1.2;
         }
       }
+      button {
+        margin-top: 30px;
+      }
     }
-
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 414px) {
+.container {
+  .card_user {
+    img {
+      margin-left: 55px;
+    }
+    .content {
+      margin-left: 25px;
+    }
+    
+  }
+}
+}
+
+@media (min-width: 700px) {
   .container {
     display: flex;
 
     .card_user {
-
       img {
         display: block;
         text-align: center;
@@ -158,12 +176,11 @@
         margin-left: 35px;
         padding: 15px;
       }
-      
+
       margin: 0;
 
       width: 50%;
       .content {
-
         h1 {
           font-size: 14pt;
         }
@@ -171,18 +188,16 @@
           margin-right: 80px;
         }
         .bar_colored {
-          width: 13rem;
+          width: 235px;
         }
       }
     }
 
     .cards {
-
       .card_repository {
         margin: 0 0 15px 15px;
       }
     }
-
   }
 }
 
@@ -192,7 +207,6 @@
       width: 35%;
     }
     .cards {
-
       .card_repository {
         width: 55vw;
       }
@@ -203,7 +217,6 @@
 @media (min-width: 1440px) {
   .container {
     .card_user {
-    
       img {
         margin-left: 27px;
       }

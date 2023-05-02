@@ -1,1 +1,1 @@
-# TU parou, enquanto tava criando as req da api para mostrar os dados do usuario, unico e seus repo
+- Arrumando responsividade do projeto, pag UserProfile
