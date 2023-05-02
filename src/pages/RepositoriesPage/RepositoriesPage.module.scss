@@ -1,8 +1,10 @@
-@import '/src/styles/cardStyles.scss';
-@import '/src/styles/estilosGlobais.scss';
+@import 'styles/cardStyles.scss';
+@import 'styles/globalStyles.scss';
+@import 'styles/variables.scss';
 
 .container {
     margin-top: 2rem;
+    font-family: $font;
     .repositories {
         @include card-style;
         .favorites {

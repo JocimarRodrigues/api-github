@@ -15,8 +15,7 @@ export const FavoritesProvider = ({ children }) => {
 
 export const useFavoritesContext = () => {
   const { favorites, setFavorites } = useContext(FavoritesContext);
-  const [ star, setStar ] = useState({});
-
+  const [star, setStar] = useState({});
 
   const addRepo = (name, description) => {
     const newRepo = {
@@ -24,27 +23,29 @@ export const useFavoritesContext = () => {
       description: description,
     };
 
-    addFavorite(newRepo)
+    addFavorite(newRepo);
   };
 
-  const addFavorite  = (newFavorite) => {
-    setStar({...star, [newFavorite.name]: !star[newFavorite.name]})
+  const addFavorite = (newFavorite) => {
+    setStar({ ...star, [newFavorite.name]: !star[newFavorite.name] });
 
-    const favoriteExists = favorites.find((favorite) => favorite.name === newFavorite.name);
+    const favoriteExists = favorites.find(
+      (favorite) => favorite.name === newFavorite.name
+    );
 
     if (favoriteExists) {
-        setFavorites(
-            favorites.filter((favorite) => favorite.name !== favoriteExists.name)
-        )
+      setFavorites(
+        favorites.filter((favorite) => favorite.name !== favoriteExists.name)
+      );
     } else {
-        setFavorites([...favorites, newFavorite])
-        setStar({...star, [newFavorite.name]: true})
+      setFavorites([...favorites, newFavorite]);
+      setStar({ ...star, [newFavorite.name]: true });
     }
-  }
+  };
 
   return {
     favorites,
     star,
-    addRepo
-  }
+    addRepo,
+  };
 };

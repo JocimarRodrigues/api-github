@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import logo from "./gitHubLogo.png";
 import styles from "./HomePage.module.scss";
-import Form from "../../components/Form";
-import Modal from "../../components/Modal";
+import Form from "components/Form";
 
 const HomePage = () => {
   const [selectedButton, setSelectedButton] = useState("user");
@@ -11,11 +9,9 @@ const HomePage = () => {
     setSelectedButton(btn);
   };
 
-  const [showModal, setShowMudal] = useState(true)
-
   return (
     <div className={styles.container}>
-      <img src={logo} alt="Logo Github" />
+      <img src="/gitHubLogo.png" alt="Logo Github" />
       <Form selectedButton={selectedButton} />
       <div className={styles.buttons}>
         <button
@@ -33,11 +29,8 @@ const HomePage = () => {
           Repositorio
         </button>
       </div>
-   
     </div>
   );
 };
 
 export default HomePage;
-
-   //<Modal showModal={showModal}/>

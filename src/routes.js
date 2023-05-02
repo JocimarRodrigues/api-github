@@ -1,14 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
-import "./styles/estilosGlobais.scss";
+import "styles/globalStyles.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { FavoritesProvider } from "./components/common/context/favoritesContext";
+import { SearchProvider } from "./components/common/context/searchContext";
 import HomePage from "./pages/HomePage";
 import BasePage from "./pages/BasePage";
 import FavoritePage from "./pages/FavoritePage";
-import { SearchProvider } from "./components/common/context/searchContext";
 import UsersPage from "./pages/UsersPage";
 import RepositoriesPage from "./pages/RepositoriesPage";
-import { FavoritesProvider } from "./components/common/context/favoritesContext";
 import ProfilePage from "./pages/ProfilePage";
 import NotFoundPage from "./pages/NotFoundPage";
 

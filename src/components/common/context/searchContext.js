@@ -1,7 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-  apiService
-} from "../../../services/api-service";
+import { apiService } from "services/api-service";
 import { useNavigate } from "react-router-dom";
 
 export const SearchContext = createContext();

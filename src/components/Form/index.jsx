@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Form.module.scss";
 import { SearchContext } from "../common/context/searchContext";
-import { apiService } from "../../services/api-service";
+import { apiService } from "services/api-service";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal";
 

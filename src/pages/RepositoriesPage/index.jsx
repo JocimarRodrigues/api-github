@@ -1,23 +1,19 @@
 import React from "react";
 import styles from "./RepositoriesPage.module.scss";
 import { AiOutlineStar } from "react-icons/ai";
-import { useSearchContext } from "../../components/common/context/searchContext";
-import { useFavoritesContext } from "../../components/common/context/favoritesContext";
+import { useSearchContext } from "components/common/context/searchContext";
+import { useFavoritesContext } from "components/common/context/favoritesContext";
 
 const RepositoriesPage = () => {
   const { repositories, showMoreResults } = useSearchContext();
 
-  const {addRepo, star} = useFavoritesContext();
+  const { addRepo, star } = useFavoritesContext();
 
-  console.log(star)
-
-
+  console.log(star);
 
   return (
     <div className={styles.container}>
       {repositories.map((repository) => {
-
-       
         return (
           <div
             className={styles.repositories}
@@ -31,10 +27,15 @@ const RepositoriesPage = () => {
               <p>{repository.stars}</p>
             </div>
 
-            <img 
-            src={star[repository.nameRepo] ? "/star-colored.png": "/star.png"} 
-            alt="Star-Image"
-            onClick={() => addRepo(repository.nameRepo, repository.description)} />
+            <img
+              src={
+                star[repository.nameRepo] ? "/star-colored.png" : "/star.png"
+              }
+              alt="Star"
+              onClick={() =>
+                addRepo(repository.nameRepo, repository.description)
+              }
+            />
           </div>
         );
       })}
