@@ -9,7 +9,6 @@ const RepositoriesPage = () => {
 
   const { addRepo, star } = useFavoritesContext();
 
-  console.log(star);
 
   return (
     <div className={styles.container}>
