@@ -36,7 +36,6 @@ const Form = ({ selectedButton }) => {
           navigate("users");
         } else {
           openModal();
-          alert("Não Existe");
         }
       } catch (error) {}
     } else if (selectedButton === "repository") {
@@ -47,7 +46,6 @@ const Form = ({ selectedButton }) => {
           navigate("repositories");
         } else {
           closeModal();
-          alert("Não existe");
         }
       } catch (error) {}
     }

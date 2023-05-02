@@ -1,4 +1,5 @@
 @import 'styles/globalStyles.scss';
+@import 'styles/variables.scss';
 
 .overlay {
     position: fixed;
@@ -15,13 +16,12 @@
     text-align: center;
     .content {
         img {
-            width: 120px;
+            width: 80px;
         }
-        //font-family: $fonte;
         padding: 20px;
         border-radius: 15px;
         background-color: #282c34;
-        max-width: 20vw;
+        width: 200px;
         color: white;
         button {
             @include button-style;
@@ -32,3 +32,4 @@
         }
     }
 }
+
