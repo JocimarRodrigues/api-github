@@ -43,7 +43,9 @@ const ProfilePage = () => {
             </div>
           );
         })}
-        <button onClick={showMoreResultsProfile}>Buscar Mais</button>
+        {userRepositories.length > 0 && (
+          <button onClick={showMoreResultsProfile}>Buscar Mais</button>
+        )}
       </div>
     </div>
   );

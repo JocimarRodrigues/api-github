@@ -9,9 +9,13 @@
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.616);
     border-radius: 15px;
     margin: 20px;
+    cursor: pointer;
+    transition: 1s;
+    &:hover {
+      opacity: 0.5;
+    }
     h1 {
       margin: 20px;
-     //word-wrap: break-word;
     }
     img {
       margin: 20px;
