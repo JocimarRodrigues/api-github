@@ -7,6 +7,12 @@
     font-family: $font;
     .repositories {
         @include card-style;
+        h1 {
+            font-size: $title-size / 1.2;
+        }
+        h2 {
+            font-size: $text-size;
+        }
         .favorites {
             display: flex;
             align-items: center;
@@ -19,4 +25,20 @@
         @include button-style;
         @include button-more;
     }
+}
+
+
+
+@media (min-width: 700px) {
+    .container {
+        .repositories {
+            h1 {
+                font-size: $title-size;
+            }
+            h2 {
+                font-size: $text-size * 1.3;
+            }
+        }
+    }
+    
 }

@@ -2,16 +2,15 @@
 
 .container {
     margin-top: 2rem;
+
     .repositories {
         @include card-style;
     }
     .notFound {
+        height: 100vh;
         display: flex;
+        text-align: center;
         align-items: center;
         justify-content: center;
-        height: 200px;
-        h1 {
-   
-          }
     }
 }
