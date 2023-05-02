@@ -13,7 +13,7 @@ O projeto deste repositório consiste em consumir a API do GitHub e salvar repos
 | 🪧 API-GitHub |     |
 | -------------- | --- |
 | 🏷️ Tecnologias | React, JavaScript, HTML, CSS, SCSS, Context API|
-| 🚀 URL         | **URL** |
+| 🚀 URL         | **api-github-kappa.vercel.app** |
 
 ## Demonstração de uso
 
